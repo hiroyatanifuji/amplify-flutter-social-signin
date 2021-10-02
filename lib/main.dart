@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
 
   Future<void> _signIn() async {
     try {
-      final res = await Amplify.Auth.signInWithWebUI();
+      final res = await Amplify.Auth.signInWithWebUI(provider: AuthProvider.google);
       if (res.isSignedIn) {
         try {
           final user = await Amplify.Auth.getCurrentUser();
